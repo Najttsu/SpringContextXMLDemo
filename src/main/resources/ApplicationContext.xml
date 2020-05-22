@@ -14,7 +14,12 @@
 		<!-- getTool/setTool -->
 		<!-- <property name="tool" ref="plow"></property> -->
 	</bean>
-	
+
+	<bean id="assassin_unit" class="builder.Unit">
+		<constructor-arg type="interfaces.IPerson" ref="assassin"></constructor-arg>
+		<constructor-arg type="interfaces.ITool" ref="dagger"></constructor-arg>
+	</bean>
+
 	<!-- Value types constructor n properties -->
 	<bean id="warrior_unit2" class="builder.Unit">
 		<!-- Unit(String _nationality, int _level) -->
@@ -24,7 +29,7 @@
 		<property name="person" ref="peasant"></property>
 		<property name="tool" ref="plow"></property>
 	</bean>
-	
+
 	<!-- Value types constructor n properties with schema p -->
 	<bean id="warrior_unit3" class="builder.Unit"
 		p:person-ref="peasant" p:tool-ref="sword">
@@ -32,7 +37,7 @@
 		<constructor-arg value="Russian" index="0" type="String"></constructor-arg>
 		<constructor-arg value="3" index="1" type="int"></constructor-arg>
 	</bean>
-	
+
 	<!-- Value types constructor n properties with schema p with prototype scope -->
 	<bean id="warrior_unit3_prototype" class="builder.Unit"
 		p:person-ref="peasant" p:tool-ref="sword"
@@ -41,7 +46,7 @@
 		<constructor-arg value="Russian" index="0" type="String"></constructor-arg>
 		<constructor-arg value="3" index="1" type="int"></constructor-arg>
 	</bean>
-	
+
 	<!-- Value types constructor n properties with schema p with life cycle methods -->
 	<bean id="warrior_unit4" class="builder.Unit"
 		p:person-ref="peasant" p:tool-ref="sword"
@@ -51,7 +56,7 @@
 		<constructor-arg value="Russian" index="0" type="String"></constructor-arg>
 		<constructor-arg value="3" index="1" type="int"></constructor-arg>
 	</bean>
-	
+
 	<!-- Value types constructor n properties with schema p with life cycle methods n singleton scope -->
 	<bean id="warrior_unit5" class="builder.Unit"
 		p:person-ref="peasant" p:tool-ref="sword"
@@ -65,7 +70,10 @@
 
 	<bean id="peasant" class="implementations.Peasant"></bean>
 	<bean id="warrior" class="implementations.Warrior"></bean>
-	
+
 	<bean id="sword" class="implementations.Sword"></bean>
 	<bean id="plow" class="implementations.Plow"></bean>
+
+	<bean id="assassin" class="implementations.Assassin"></bean>
+	<bean id="dagger" class="implementations.Dagger"></bean>
 </beans>

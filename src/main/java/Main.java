@@ -11,10 +11,15 @@ public class Main {
 				new ClassPathXmlApplicationContext("ApplicationContext.xml");
 		
 		Unit warriorUnit = (Unit) context.getBean("warrior_unit");
+		Unit assassinUnit = (Unit) context.getBean("assassin_unit");
 		
 		warriorUnit.show();
 		warriorUnit.say("Hello");
 		warriorUnit.testActions();
+
+		assassinUnit.show();
+		assassinUnit.say("I'll kill you!");
+		assassinUnit.testActions();
 		
 		/*Unit warriorUnit2 = (Unit) context.getBean("warrior_unit3");
 		Unit warriorUnitPrototype = (Unit) context.getBean("warrior_unit3_prototype");
